@@ -140,6 +140,16 @@
         const email = document.querySelector('#email');
         const city = document.querySelector('#city');
         const nationalty = document.querySelector('#nationalty');
+
+
+        btn.addEventListener('click', function () {
+        fetch(url)
+        .then(res => {
+        if (!res.ok) {
+        throw Error(res.status)
+        }
+        return res.json();
+        })
     </script>
 </body>
 
