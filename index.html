@@ -143,36 +143,40 @@
 
 
         btn.addEventListener('click', function () {
-        fetch(url)
-        .then(res => {
-        if (!res.ok) {
-        throw Error(res.status)
-        }
-        return res.json();
-        })
+                fetch(url)
+                    .then(res => {
+                        if (!res.ok) {
+                            throw Error(res.status)
+                        }
+                        return res.json();
+                    })
 
-          .then(data => {
-          console.log(data);
-          let userAvatar = (data.results[0].picture.medium);
-          let name = (
-          `${data.results[0].name.first} ${data.results[0].name.last}`
-          );
-          let loginUsername = (data.results[0].login.username);
-          let userEmail = (data.results[0].email);
-          let userCity = (data.results[0].location.city);
-          let userNationalty = (data.results[0].nat);
-
-
+                    .then(data => {
+                        console.log(data);
+                        let userAvatar = (data.results[0].picture.medium);
+                        let name = (
+                            `${data.results[0].name.first} ${data.results[0].name.last}`
+                        );
+                        let loginUsername = (data.results[0].login.username);
+                        let userEmail = (data.results[0].email);
+                        let userCity = (data.results[0].location.city);
+                        let userNationalty = (data.results[0].nat);
 
 
-          avatar.src = userAvatar;
-          fullname.innerHTML = name;
-          username.textContent = loginUsername;
-          email.textContent = userEmail;
-          city.textContent = userCity;
-          nationalty.textContent = userNationalty;
-          })
-        })
+
+
+                        avatar.src = userAvatar;
+                        fullname.innerHTML = name;
+                        username.textContent = loginUsername;
+                        email.textContent = userEmail;
+                        city.textContent = userCity;
+                        nationalty.textContent = userNationalty;
+                    })
+            })
+            .catch(err => {
+                console.log(`You have a ${err} error`);
+
+            })
     </script>
 </body>
 
