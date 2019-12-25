@@ -1,100 +1,95 @@
   /* CSS design originally by @jofpin, tweaked by Ejiro Asiuwhu */
-        @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500,600&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Courier+Prime&display=swap');
 
-        body {
-            background: #ecf0f1;
-            padding: 2.23em;
-            font-family: 'IBM Plex Mono', monospace;
-        }
+  body {
+      background: #ecf0f1;
+      padding: 2.23em;
+      font-family: 'Courier Prime', monospace;
+  }
 
-        .title {
-            color: #211717;
-            font-family: "Coda", sans-serif;
-            text-align: center;
-            font-weight: 600;
-        }
+  .title {
+      color: #211717;
+      text-align: center;
+      font-weight: 600;
+  }
 
-        .user-profile {
-            margin: auto;
-            width: 27em;
-            height: auto;
-            background: #fff;
-            border-radius: .3em;
-        }
+  .user-profile {
+      margin: auto;
+      width: 27em;
+      height: auto;
+      background: #fff;
+      border-radius: .3em;
+  }
 
-        .user-profile #fullname {
-            margin: auto;
-            margin-top: -4.40em;
-            margin-left: 5.80em;
-            color: #ec9b3b;
-            font-size: 1.53em;
-            font-family: "Coda", sans-serif;
-            font-weight: bold;
-        }
+  .user-profile #fullname {
+      margin: auto;
+      margin-top: -4.40em;
+      margin-left: 5.80em;
+      color: #ec9b3b;
+      font-size: 1.53em;
+      font-weight: bold;
+  }
 
-        #username {
-            margin: auto;
-            display: inline-block;
-            margin-left: 10.43em;
-            color: #f77754;
-            font-size: .87em;
-            font-family: "varela round", sans-serif;
-        }
+  #username {
+      margin: auto;
+      display: inline-block;
+      margin-left: 10.43em;
+      color: #f77754;
+      font-size: .87em;
+  }
 
-        .user-profile>.description {
-            margin: auto;
-            margin-top: 1.35em;
-            margin-right: 3em;
-            width: 18em;
-            color: #ec9b3b;
-            font-size: .87em;
-            font-family: "varela round", sans-serif;
-        }
+  .user-profile>.description {
+      margin: auto;
+      margin-top: 1.35em;
+      margin-right: 3em;
+      width: 18em;
+      color: #ec9b3b;
+      font-size: .87em;
+  }
 
-        .user-profile>img#avatar {
-            padding: .7em;
-            margin-left: .3em;
-            margin-top: .3em;
-            height: 6.23em;
-            width: 6.23em;
-            border-radius: 18em;
-        }
+  .user-profile>img#avatar {
+      padding: .7em;
+      margin-left: .3em;
+      margin-top: .3em;
+      height: 6.23em;
+      width: 6.23em;
+      border-radius: 18em;
+  }
 
 
-        .footer {
-            margin: 2em auto;
-            height: 3.70em;
-            background: #ec9b3b;
-            text-align: center;
-            border-radius: 0 0 .3em .3em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: all 0.2s cubic-bezier(0.47, 0, 0.745, 0.715);
-        }
+  .footer {
+      margin: 2em auto;
+      height: 3.70em;
+      background: #ec9b3b;
+      text-align: center;
+      border-radius: 0 0 .3em .3em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.2s cubic-bezier(0.47, 0, 0.745, 0.715);
+  }
 
-        button {
-            color: white;
-            font-family: "Coda", sans-serif;
-            text-align: center;
-            font-size: 20px;
-            background: none;
-            outline: none;
-            border: 0;
-            cursor: pointer;
-            user-select: none;
-        }
+  button {
+      color: white;
+      text-align: center;
+      font-size: 20px;
+      background: none;
+      outline: none;
+      border: 0;
+      cursor: pointer;
+      user-select: none;
+  }
 
-        .footer:hover {
-            background: #f77754;
-        }
+  .footer:hover {
+      background: #f77754;
+  }
 
-        .description div {
-            padding: .2rem;
-        }
+  .description div {
+      padding: .2rem;
+  }
 
-        @media screen and (max-width: 500px) {
-            body {
-                padding: 0;
-            }
-        }
+  @media screen and (max-width: 500px) {
+      body {
+          padding: 0;
+      }
+  }
