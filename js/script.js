@@ -38,14 +38,17 @@ const updateProfile = data => {
     nationalty.textContent = userNationalty;
 };
 
+const displayErr = err => {
+    console.log(`You have a ${err} error`);
+
+}
+
+
 btn.addEventListener('click', function () {
     fetch(url)
         .then(handleErrors)
         .then(updateProfile)
-        .catch(err => {
-            console.log(`You have a ${err} error`);
-
-        });
+        .catch(displayErr);
 });
 
 
