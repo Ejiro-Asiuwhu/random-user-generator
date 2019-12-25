@@ -10,111 +10,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="./assets/favicon/site.webmanifest">
-    <title>Fetch Api</title>
-
-    <style>
-        /* CSS design originally by @jofpin, tweaked by Ejiro Asiuwhu */
-        @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:500,600&display=swap');
-
-        body {
-            background: #ecf0f1;
-            padding: 2.23em;
-            font-family: 'IBM Plex Mono', monospace;
-        }
-
-        .title {
-            color: #211717;
-            font-family: "Coda", sans-serif;
-            text-align: center;
-            font-weight: 600;
-        }
-
-        .user-profile {
-            margin: auto;
-            width: 27em;
-            height: auto;
-            background: #fff;
-            border-radius: .3em;
-        }
-
-        .user-profile #fullname {
-            margin: auto;
-            margin-top: -4.40em;
-            margin-left: 5.80em;
-            color: #ec9b3b;
-            font-size: 1.53em;
-            font-family: "Coda", sans-serif;
-            font-weight: bold;
-        }
-
-        #username {
-            margin: auto;
-            display: inline-block;
-            margin-left: 10.43em;
-            color: #f77754;
-            font-size: .87em;
-            font-family: "varela round", sans-serif;
-        }
-
-        .user-profile>.description {
-            margin: auto;
-            margin-top: 1.35em;
-            margin-right: 3em;
-            width: 18em;
-            color: #ec9b3b;
-            font-size: .87em;
-            font-family: "varela round", sans-serif;
-        }
-
-        .user-profile>img#avatar {
-            padding: .7em;
-            margin-left: .3em;
-            margin-top: .3em;
-            height: 6.23em;
-            width: 6.23em;
-            border-radius: 18em;
-        }
-
-
-        .footer {
-            margin: 2em auto;
-            height: 3.70em;
-            background: #ec9b3b;
-            text-align: center;
-            border-radius: 0 0 .3em .3em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: all 0.2s cubic-bezier(0.47, 0, 0.745, 0.715);
-        }
-
-        button {
-            color: white;
-            font-family: "Coda", sans-serif;
-            text-align: center;
-            font-size: 20px;
-            background: none;
-            outline: none;
-            border: 0;
-            cursor: pointer;
-        }
-
-        .footer:hover {
-            background: #f77754;
-        }
-
-        .description div {
-            padding: .2rem;
-        }
-
-        @media screen and (max-width: 500px) {
-            body {
-                padding: 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./css/style.css ">
+    <title>Random User Generator</title>
 </head>
-
 <body>
     <div class="container">
         <h1 class="title"> Random User Generator</h1>
@@ -134,63 +32,7 @@
             </div>
         </div>
     </div>
-
-
-
-    <script>
-        // DOM selection
-        const url = 'https://randomuser.me/api';
-        const btn = document.querySelector('button');
-        const avatar = document.querySelector('#avatar');
-        const fullname = document.querySelector('#fullname');
-        const username = document.querySelector('#username');
-        const email = document.querySelector('#email');
-        const city = document.querySelector('#city');
-        const nationalty = document.querySelector('#nationalty');
-
-
-        btn.addEventListener('click', function () {
-                fetch(url)
-                    .then(res => {
-                        if (!res.ok) {
-                            throw Error(res.status)
-                        }
-                        return res.json();
-                    })
-
-                    .then(data => {
-                        console.log(data);
-                        let userAvatar = (data.results[0].picture.medium);
-                        let name = (
-                            `${data.results[0].name.first} ${data.results[0].name.last}`
-                        );
-                        let loginUsername = (data.results[0].login.username);
-                        let userEmail = (data.results[0].email);
-                        let userCity = (data.results[0].location.city);
-                        let userNationalty = (data.results[0].nat);
-
-
-
-
-                        avatar.src = userAvatar;
-                        fullname.innerHTML = name;
-                        username.textContent = loginUsername;
-                        email.textContent = userEmail;
-                        city.textContent = userCity;
-                        nationalty.textContent = userNationalty;
-                    })
-            })
-            .catch(err => {
-                console.log(`You have a ${err} error`);
-
-            })
-
-        // fetch(url)
-        // .then(handleErrors)
-        // .then(parseJSON)
-        // .then(updateProfile)
-        // .catch(printError)
-    </script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
