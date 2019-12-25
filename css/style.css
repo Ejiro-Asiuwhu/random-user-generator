@@ -8,7 +8,6 @@
   }
 
   .title {
-      color: #211717;
       text-align: center;
   }
 
@@ -21,7 +20,6 @@
   }
 
   .user-profile #fullname {
-      margin: auto;
       margin: -4.40em 0 0 5.80em;
       color: #ec9b3b;
       font-size: 1.53em;
@@ -44,7 +42,6 @@
   .user-profile>img#avatar {
       padding: .7em;
       margin: .3em 0 0 .3em;
-      height: 6.23em;
       width: 6.23em;
       border-radius: 18em;
   }
