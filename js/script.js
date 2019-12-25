@@ -41,7 +41,7 @@ const updateProfile = data => {
 const displayErr = err => {
     console.log(`You have a ${err} error`);
 
-}
+};
 
 
 btn.addEventListener('click', function () {
