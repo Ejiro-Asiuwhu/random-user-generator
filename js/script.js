@@ -9,7 +9,7 @@ const city = document.querySelector('#city');
 const nationalty = document.querySelector('#nationalty');
 
 
-
+// Errors handling and JSON parsing 
 const handleErrors = res => {
     if (!res.ok) {
         throw Error(res.status);
@@ -18,6 +18,7 @@ const handleErrors = res => {
     return res.json();
 };
 
+// DOM manipulation
 const updateProfile = data => {
     console.log(data);
     let userAvatar = (data.results[0].picture.medium);
@@ -38,12 +39,13 @@ const updateProfile = data => {
     nationalty.textContent = userNationalty;
 };
 
+// Displaying errors
 const displayErr = err => {
     console.log(`You have a ${err} error`);
 
 };
 
-
+// Updating profile on button click
 btn.addEventListener('click', function () {
     fetch(url)
         .then(handleErrors)
