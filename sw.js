@@ -1,5 +1,8 @@
+// Cache name
 const cacheName = 'cache-v1';
 
+
+// adding stactic assets 
 const cachedFiles = [
     '/',
     'index.html',
@@ -12,6 +15,8 @@ const cachedFiles = [
     'manifest.json'
 ];
 
+
+// add cache flies on installation
 self.addEventListener('install', event => {
     console.log('Service worker installing...');
     self.skipWaiting();
@@ -25,19 +30,23 @@ self.addEventListener('install', event => {
 });
 
 
+// activate service worker
 self.addEventListener('activate', event => {
     console.log('activating service worker');
 });
 
+
+// intercept network request
 self.addEventListener('fetch', event => {
     console.log('Fetch intercepted for', event.request.url);
     event.respondWith(
         caches.match(event.request)
+            // return cached files if they have been cached
             .then(cachedResponse => {
                 if (cachedResponse) {
                     return cachedResponse;
                 }
-
+                // request files from network if the are not in browser cache
                 return fetch(event.request);
             })
     );
