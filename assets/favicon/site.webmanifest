@@ -1,6 +1,7 @@
 {
     "name": "Random User Gen",
     "short_name": "Random User Gen",
+    "lang": "en-US",
     "icons": [
         {
             "src": "android-chrome-192x192.png",
