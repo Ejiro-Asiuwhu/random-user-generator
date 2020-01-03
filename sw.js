@@ -2,10 +2,10 @@ const cacheName = 'cache-v1';
 
 const cachedFiles = [
     '/',
-    '/index.html',
-    '/css/style.css',
-    '/js/script.js',
-    '/assets/favicon/android-chrome-192x192.png',
+    'index.html',
+    'css/style.css',
+    'js/script.js',
+    'assets/favicon/android-chrome-192x192.png',
     'assets/favicon/android-chrome-512x512.png',
     'assets/favicon/apple-touch-icon.png',
     'assets/favicon/favicon-16x16.png',
@@ -40,10 +40,6 @@ self.addEventListener('fetch', event => {
 
                 return fetch(event.request);
             })
-    )
-        .catch(err => {
-            console.log('You have a ', err);
-
-        });
+    );
 });
 
