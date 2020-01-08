@@ -1,3 +1,54 @@
+// Service worker registration
+let newWorker;
+function showUpdateBar() {
+    let snackbar = document.getElementById('snackbar');
+    snackbar.className = 'show';
+}
+// The click event on the notification
+document.querySelector('#reload').addEventListener('click', () => {
+    newWorker.postMessage({
+        action: 'skipWaiting'
+    });
+});
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', event => {
+        // Register the service worker
+        navigator.serviceWorker.register('../sw.js')
+            .then(reg => {
+                reg.addEventListener('updatefound', () => {
+                    // An updated service worker has appeared in reg.installing!
+                    newWorker = reg.installing;
+                    newWorker.addEventListener('statechange', () => {
+                        // Has service worker state changed?
+                        switch (newWorker.state) {
+                            case 'installed':
+                                // There is a new service worker available, show the notification
+                                if (navigator.serviceWorker.controller) {
+                                    let notification = document.getElementById(
+                                        'notification ');
+                                    notification.className = 'show';
+                                }
+                                break;
+                        }
+                    });
+                });
+                console.log('Service worker registered ', reg);
+            })
+            .catch(err => {
+                console.log('Service worker registration failed', err);
+            })
+    })
+}
+let refreshing;
+// The event listener that is fired when the service worker updates
+// Here we reload the page
+navigator.serviceWorker.addEventListener('controllerchange', function () {
+    if (refreshing) return;
+    window.location.reload();
+    refreshing = true;
+});
+
+
 // DOM selection
 const url = 'https://randomuser.me/api';
 const btn = document.querySelector('button');
